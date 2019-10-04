@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router'
+// import { Redirect } from 'react-router'
 import {
   TextField,
   Button,
@@ -20,6 +20,8 @@ class App extends Component {
 
   login = (e) => {
     e.preventDefault()
+    document.cookie=
+    'loggedIn=true;max-age = 60*1000'
     // set cookie here
     // set loggedIn = true and max-age = 60*1000 (one minute)
 
@@ -32,14 +34,14 @@ class App extends Component {
         <Container maxWidth="sm">
           <form className="login-form" onSubmit={this.login}>
             <TextField
-              required
+            
               onChange={this.handleTextChange}
               value={this.state.username}
               name="username"
               label="Username"
               type="text" />
             <TextField
-              required
+            
               onChange={this.handleTextChange}
               value={this.state.password}
               name="password"
